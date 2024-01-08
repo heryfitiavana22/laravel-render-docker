@@ -2,7 +2,7 @@
 
 ## Dockerize laravel on render
 
-This repository provides instructions for deploying a Laravel application on [Render](https://render.com/).
+This repository provides instructions for deploying a Laravel application on [Render](https://render.com/). You can see this example [here](https://laravel-render-docker-example.onrender.com)
 
 ## Requirements
 
@@ -11,7 +11,7 @@ This repository provides instructions for deploying a Laravel application on [Re
 
 ### Dockerfile
 
-The `Dockerfile` contains instructions for building the Docker image of your application. You can find the Dockerfile for my image `herydj/laravel-render-php` in the `.dockerfile` folder.
+The `Dockerfile` contains instructions for building the Docker image of your application. You can find the Dockerfile for my image `herydj/laravel-render-php` in the `.docker` folder.
 
 ```dockerfile
 FROM herydj/laravel-render-php
