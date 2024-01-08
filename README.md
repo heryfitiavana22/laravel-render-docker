@@ -19,6 +19,7 @@ FROM herydj/laravel-render-php
 
 WORKDIR /app
 
+RUN apt-get update
 RUN apt-get install nodejs -y
 RUN apt-get install npm -y
 
