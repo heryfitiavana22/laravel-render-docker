@@ -2,7 +2,7 @@
 
 ## Dockerize laravel on render
 
-This repository provides instructions for deploying a Laravel application on [Render](https://render.com/). You can see this example [here](https://laravel-render-docker-example.onrender.com)
+This repository provides instructions for deploying a Laravel application on [Render](https://render.com/). You can see this example [here](https://laravel-render-docker-example.onrender.com). If you are using React, follow the instructions in the branch [react](https://github.com/heryfitiavana22/laravel-render-docker/tree/react).
 
 ## Requirements
 
