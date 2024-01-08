@@ -2,12 +2,13 @@
 
 ## Dockerize laravel on render
 
-This repository provides instructions for deploying a Laravel application on [Render](https://render.com/).
+This repository provides instructions for deploying a Laravel application on [Render](https://render.com/). You can see this example here.
 
 ## Requirements
 
 -   [Docker](https://docs.docker.com/) installed on your machine
 -   [render](https://render.com/) account
+-   [Laravel breeze and choose react](https://bootcamp.laravel.com/inertia/installation#installing-laravel-breeze)
 
 ### Dockerfile
 
@@ -18,9 +19,15 @@ FROM herydj/laravel-render-php
 
 WORKDIR /app
 
+RUN apt-get install nodejs -y
+RUN apt-get install npm -y
+
 COPY . .
 
 RUN chmod +x ./start.prod.sh
+
+RUN npm install
+RUN npm run build
 
 # uncomment if you use database
 # RUN php artisan migrate -n
@@ -36,6 +43,7 @@ CMD ["./start.prod.sh"]
 Create file `start.prod.sh` in the project root and paste the content below :
 
 ```bash
+rm public/hot
 php artisan serve --host=0.0.0.0 --port=8000
 ```
 
