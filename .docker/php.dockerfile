@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y \
     nano \
     cron
 
-RUN docker-php-ext-install pdo mbstring
+RUN docker-php-ext-install pdo mbstring pdo_mysql
 
 COPY . .
 
