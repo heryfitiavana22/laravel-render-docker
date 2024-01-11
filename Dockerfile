@@ -2,13 +2,14 @@ FROM herydj/laravel-render-php
 
 WORKDIR /app
 
+RUN apt-get install mysql-server
+
 COPY . .
 
 COPY start.prod.sh /app
 
 RUN chmod +x ./start.prod.sh
 
-# RUN apt-get install php-mysql
 
 # uncomment if you use database
 RUN php artisan migrate -n
