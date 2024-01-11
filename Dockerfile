@@ -2,7 +2,7 @@ FROM herydj/laravel-render-php
 
 WORKDIR /app
 
-RUN apt-get install mysql-server
+# RUN apt-get install mysql-server
 
 COPY . .
 
