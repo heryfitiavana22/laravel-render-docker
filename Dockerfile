@@ -1,4 +1,4 @@
-FROM herydj/laravel-render-php
+FROM herydj/laravel-php-render
 
 WORKDIR /app
 
@@ -13,6 +13,7 @@ COPY start.prod.sh /app
 
 RUN chmod +x ./start.prod.sh
 
+RUN composer install
 RUN npm install
 RUN npm run build
 # uncomment if you use database
