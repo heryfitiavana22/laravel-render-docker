@@ -7,8 +7,6 @@ WORKDIR /app
 RUN apt-get install nodejs -y
 RUN apt-get install npm -y
 
-RUN touch /app/database/database.sqlite
-
 COPY . .
 
 COPY start.prod.sh /app
@@ -19,7 +17,7 @@ RUN composer install
 RUN npm install
 RUN npm run build
 # uncomment if you use database
-RUN php artisan migrate -n
+# RUN php artisan migrate -n
 RUN php artisan storage:link
 
 EXPOSE 8000
