@@ -2,7 +2,7 @@ FROM herydj/laravel-php-render
 
 WORKDIR /app
 
-RUN apt-get install mysql-server
+# RUN apt-get install mysql-server
 
 RUN apt-get install nodejs -y
 RUN apt-get install npm -y
