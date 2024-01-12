@@ -7,7 +7,7 @@ WORKDIR /app
 RUN apt-get install nodejs -y
 RUN apt-get install npm -y
 
-RUN touch database/database.sqlite
+RUN touch /app/database/database.sqlite
 
 COPY . .
 
