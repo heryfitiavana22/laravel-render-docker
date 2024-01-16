@@ -71,7 +71,46 @@ php artisan serve --host=0.0.0.0 --port=8000
 
 ![App Screenshot](./env.png)
 
-    - Finally, click `Done` > `Save Changes`. Wait deploying and see your app 😎😉
+-   Finally, click `Done` > `Save Changes`. Wait deploying and see your app 
+
+
+## Troubleshooting
+
+    - Mixed Content: The page at 'https://laravel-react-render-docker-example.onrender.com/' was loaded over HTTPS, but requested an insecure script 'http://laravel-react-render-docker-example.onrender.com/build/assets/app-wUJ-_bob.js'. This request has been blocked; the content must be served over HTTPS.
+
+Go to `app` > `Providers` > `AppServiceProvider.php` file and :
+```php
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        if(env('APP_ENV') !== 'local')
+        {
+            URL::forceScheme('https');
+        }
+    }
+}
+
+```
+😎😉
 
 ## Related
 
