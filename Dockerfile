@@ -17,7 +17,7 @@ RUN composer install
 # RUN npm run build
 
 # uncomment if using a database other than sqlite
-RUN php artisan migrate -n
+# RUN php artisan migrate -n
 
 RUN php artisan storage:link
 RUN php artisan key:generate
