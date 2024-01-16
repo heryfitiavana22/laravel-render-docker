@@ -7,7 +7,7 @@ This repository provides instructions for deploying a Laravel application on [Re
 ## Requirements
 
 -   [Docker](https://docs.docker.com/) installed on your machine
--   [render](https://render.com/) account
+-   [Render](https://render.com/) account
 
 ### Dockerfile
 
@@ -65,7 +65,14 @@ php artisan serve --host=0.0.0.0 --port=8000
 
 ![App Screenshot](./runtime.png)
 
--   Finally, create your web service with the button `Create Web Service`
+-   Create your web service with the button `Create Web Service`
+-   Setup environment, go to `Environment` > click the button `Add Secret File`
+    ![App Screenshot](./secret.png)
+
+-   Make filename to `.env`, the paste the `.env` file content and change the `APP_ENV` and `APP_URL` value like this :
+    ![App Screenshot](./env.png)
+
+    - Finally, click `Done` > `Save Changes`. Wait deploying and see your app 😎😉
 
 ## Related
 
