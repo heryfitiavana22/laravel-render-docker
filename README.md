@@ -67,12 +67,51 @@ php artisan serve --host=0.0.0.0 --port=8000
 
 -   Create your web service with the button `Create Web Service`
 -   Setup environment, go to `Environment` > click the button `Add Secret File`
-    ![App Screenshot](./secret.png)
+
+![App Screenshot](./secret.png)
 
 -   Make filename to `.env`, the paste the `.env` file content and change the `APP_ENV` and `APP_URL` value like this :
-    ![App Screenshot](./env.png)
 
-    - Finally, click `Done` > `Save Changes`. Wait deploying and see your app 😎😉
+![App Screenshot](./env.png)
+
+-   Finally, click `Done` > `Save Changes`. Wait deploying and see your app 😎😉
+
+## Troubleshooting
+
+    - Mixed Content: The page at 'https://laravel-render-docker-test.onrender.com/' was loaded over HTTPS, but requested an insecure script 'http://laravel-render-docker-test.onrender.com/build/assets/app-wUJ-_bob.js'. This request has been blocked; the content must be served over HTTPS.
+
+Go to `app` > `Providers` > `AppServiceProvider.php` file and :
+```php
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        if(env('APP_ENV') !== 'local')
+        {
+            URL::forceScheme('https');
+        }
+    }
+}
+
+```
 
 ## Related
 
