@@ -1,4 +1,4 @@
-FROM herydj/laravel-render-php
+FROM herydj/laravel-php-render
 
 WORKDIR /app
 
@@ -15,7 +15,11 @@ RUN npm run build
 
 # uncomment if you use database
 # RUN php artisan migrate -n
-RUN php artisan storage:link
+# RUN php artisan storage:link
+
+RUN php artisan key:generate
+
+RUN php artisan key:generate
 
 EXPOSE 8000
 
