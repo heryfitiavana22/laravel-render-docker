@@ -45,6 +45,11 @@ Create file `start.prod.sh` in the project root and paste the content below :
 
 ```bash
 rm public/hot
+
+# if using sqlite
+touch database/database.sqlite
+php artisan migrate -n
+
 php artisan serve --host=0.0.0.0 --port=8000
 ```
 
