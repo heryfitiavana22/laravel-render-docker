@@ -70,7 +70,7 @@ php artisan serve --host=0.0.0.0 --port=8000
 
 ![App Screenshot](./secret.png)
 
--   Make filename to `.env`, the paste the `.env` file content and change the `APP_ENV` and `APP_URL` value like this :
+-   Make filename to `.env`, paste the `.env` file content and change the `APP_ENV` and `APP_URL` value like this :
 
 ![App Screenshot](./env.png)
 
