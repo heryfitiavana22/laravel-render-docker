@@ -20,7 +20,7 @@ RUN composer install
 # RUN php artisan migrate -n
 
 RUN php artisan storage:link
-RUN php artisan key:generate
+# RUN php artisan key:generate
 
 EXPOSE 8000
 
