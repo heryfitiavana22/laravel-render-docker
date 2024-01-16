@@ -27,6 +27,7 @@ COPY . .
 
 RUN chmod +x ./start.prod.sh
 
+RUN composer install
 RUN npm install
 RUN npm run build
 
@@ -61,7 +62,16 @@ php artisan serve --host=0.0.0.0 --port=8000
 
 ![App Screenshot](./runtime.png)
 
--   Finally, create your web service with the button `Create Web Service`
+-   Create your web service with the button `Create Web Service`
+-   Setup environment, go to `Environment` > click the button `Add Secret File`
+
+![App Screenshot](./secret.png)
+
+-   Make filename to `.env`, the paste the `.env` file content and change the `APP_ENV` and `APP_URL` value like this :
+
+![App Screenshot](./env.png)
+
+    - Finally, click `Done` > `Save Changes`. Wait deploying and see your app 😎😉
 
 ## Related
 

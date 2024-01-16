@@ -7,8 +7,6 @@ RUN apt-get install npm -y
 
 COPY . .
 
-RUN chmod +x ./start.prod.sh
-
 RUN composer install
 RUN npm install
 RUN npm run build
