@@ -17,7 +17,7 @@ RUN composer install
 RUN npm install
 RUN npm run build
 # uncomment if you use database
-# RUN php artisan migrate -n
+RUN php artisan migrate -n
 RUN php artisan storage:link
 
 EXPOSE 8000
